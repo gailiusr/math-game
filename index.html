@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Математическая игра для 3&nbsp;класса</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Экран меню с настройками игры -->
+  <div id="menu" class="screen">
+    <h1>Математическая игра для 3 класса</h1>
+    <p id="instructions">
+      Добро пожаловать! Выберите уровень сложности (диапазон чисел) и длительность игры.<br>
+      После нажатия «Начать игру» решайте примеры на сложение и вычитание как можно быстрее.<br>
+      Введите ответ и нажмите Enter или кнопку «Ответить». Удачи!
+    </p>
+    <div class="settings">
+      <div class="setting-group">
+        <span class="setting-label">Уровень:</span>
+        <label><input type="radio" name="difficulty" value="easy" checked> Лёгкий</label>
+        <label><input type="radio" name="difficulty" value="medium"> Средний</label>
+        <label><input type="radio" name="difficulty" value="hard"> Сложный</label>
+      </div>
+      <div class="setting-group">
+        <span class="setting-label">Время:</span>
+        <label><input type="radio" name="time" value="30" checked> 30 сек</label>
+        <label><input type="radio" name="time" value="60"> 60 сек</label>
+        <label><input type="radio" name="time" value="90"> 90 сек</label>
+      </div>
+    </div>
+    <button id="start-btn">Начать игру</button>
+  </div>
+
+  <!-- Экран игры (во время игры) -->
+  <div id="play" class="screen" style="display:none;">
+    <div id="score-time">
+      <div id="score">Правильно: 0</div>
+      <div id="time">Время: 30 сек</div>
+    </div>
+    <div id="problem" class="problem">
+      <span id="operand1"></span>
+      <span id="operator"></span>
+      <span id="operand2"></span>
+      &nbsp;=&nbsp;
+      <input type="number" id="answer-input" />
+      <button id="answer-btn">Ответить</button>
+    </div>
+    <div id="feedback"></div>
+  </div>
+
+  <!-- Экран результата -->
+  <div id="result" class="screen" style="display:none;">
+    <h2 id="result-message"></h2>
+    <button id="restart-btn">Сыграть ещё раз</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
